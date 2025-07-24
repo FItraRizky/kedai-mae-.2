@@ -1,7 +1,4 @@
 {
-  "installCommand": "npm ci",
-  "buildCommand": "npx vite build",
-  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
