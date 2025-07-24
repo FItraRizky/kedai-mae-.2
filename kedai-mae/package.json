@@ -6,8 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "vercel-build": "node build.mjs",
-    "vercel-build-direct": "node vercel-build-direct.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
