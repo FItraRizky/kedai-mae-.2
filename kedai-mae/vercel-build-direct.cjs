@@ -1,103 +1,62 @@
-// Direct build script for Vercel using CommonJS
+// Simple and direct build script for Vercel
 const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-// Log environment info
+console.log('=== Vercel Build Script Started ===');
 console.log('Current directory:', process.cwd());
 console.log('Node version:', process.version);
-console.log('NPM version:', execSync('npm -v').toString().trim());
 
-// List all files in node_modules/.bin
-try {
-  console.log('\nContents of node_modules/.bin:');
-  const binPath = path.join(process.cwd(), 'node_modules', '.bin');
-  if (fs.existsSync(binPath)) {
-    const files = fs.readdirSync(binPath);
-    console.log(files.join('\n'));
-  } else {
-    console.log('node_modules/.bin directory not found!');
-  }
-} catch (error) {
-  console.error('Error listing bin directory:', error.message);
-}
-
-// Function to run a command and log output
-function runCommand(command) {
-  console.log(`\nExecuting: ${command}`);
+// Function to execute command with proper error handling
+function executeCommand(command, description) {
+  console.log(`\n${description}`);
+  console.log(`Executing: ${command}`);
+  
   try {
-    const output = execSync(command, { stdio: 'inherit' });
-    return output;
+    const result = execSync(command, { 
+      stdio: 'inherit',
+      cwd: process.cwd(),
+      env: {
+        ...process.env,
+        PATH: process.env.PATH + path.delimiter + path.join(process.cwd(), 'node_modules', '.bin')
+      }
+    });
+    console.log(`✅ ${description} completed successfully`);
+    return result;
   } catch (error) {
-    console.error(`Command failed: ${command}`);
-    console.error(error.message);
+    console.error(`❌ ${description} failed:`);
+    console.error('Exit code:', error.status);
+    console.error('Error:', error.message);
     process.exit(1);
   }
 }
 
-// Try to find TypeScript and Vite in various locations
-const possibleTscPaths = [
-  './node_modules/.bin/tsc',
-  './node_modules/typescript/bin/tsc',
-  'npx tsc'
-];
+// Check if node_modules exists
+if (!fs.existsSync('node_modules')) {
+  console.error('❌ node_modules directory not found!');
+  process.exit(1);
+}
 
-const possibleVitePaths = [
-  './node_modules/.bin/vite',
-  './node_modules/vite/bin/vite.js',
-  'npx vite'
-];
-
-// Find working TypeScript command
-let tscCommand = null;
-for (const cmd of possibleTscPaths) {
-  try {
-    console.log(`Trying TypeScript command: ${cmd}`);
-    execSync(`${cmd} --version`, { stdio: 'pipe' });
-    tscCommand = cmd;
-    console.log(`✅ Found working TypeScript command: ${cmd}`);
-    break;
-  } catch (e) {
-    console.log(`❌ Command failed: ${cmd}`);
+// Try different approaches to run TypeScript and Vite
+try {
+  // Method 1: Try using node directly with full paths
+  const tscPath = path.join(process.cwd(), 'node_modules', 'typescript', 'bin', 'tsc');
+  const vitePath = path.join(process.cwd(), 'node_modules', 'vite', 'bin', 'vite.js');
+  
+  if (fs.existsSync(tscPath) && fs.existsSync(vitePath)) {
+    console.log('\n=== Using direct node execution ===');
+    executeCommand(`node "${tscPath}"`, 'TypeScript compilation');
+    executeCommand(`node "${vitePath}" build`, 'Vite build');
+  } else {
+    // Method 2: Use npx with explicit PATH
+    console.log('\n=== Using npx with explicit PATH ===');
+    executeCommand('npx tsc', 'TypeScript compilation');
+    executeCommand('npx vite build', 'Vite build');
   }
+  
+  console.log('\n🎉 Build process completed successfully!');
+  
+} catch (error) {
+  console.error('\n💥 Build process failed:', error.message);
+  process.exit(1);
 }
-
-// Find working Vite command
-let viteCommand = null;
-for (const cmd of possibleVitePaths) {
-  try {
-    console.log(`Trying Vite command: ${cmd}`);
-    execSync(`${cmd} --version`, { stdio: 'pipe' });
-    viteCommand = cmd;
-    console.log(`✅ Found working Vite command: ${cmd}`);
-    break;
-  } catch (e) {
-    console.log(`❌ Command failed: ${cmd}`);
-  }
-}
-
-// If commands not found, try installing globally
-if (!tscCommand) {
-  console.log('Installing TypeScript globally...');
-  runCommand('npm install -g typescript');
-  tscCommand = 'tsc';
-}
-
-if (!viteCommand) {
-  console.log('Installing Vite globally...');
-  runCommand('npm install -g vite');
-  viteCommand = 'vite';
-}
-
-// Run the build
-console.log('\n=== Starting Build Process ===');
-
-// Run TypeScript compiler
-console.log('\n=== Running TypeScript Compiler ===');
-runCommand(tscCommand);
-
-// Run Vite build
-console.log('\n=== Running Vite Build ===');
-runCommand(`${viteCommand} build`);
-
-console.log('\n✅ Build completed successfully!');
