@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, Mail, MessageCircle, Navigation } from 'lucide-react';
 import Footer from '../components/Footer';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
@@ -126,7 +125,7 @@ const Contact: React.FC = () => {
                   Lokasi Kami
                 </h2>
                 <p className="text-lg text-brown-600 mb-6">
-                  Kedai Mae berlokasi strategis di jantung kota Yogyakarta, mudah dijangkau dengan berbagai transportasi.
+                  Kedai Mae berlokasi strategis di jantung kota Bandar Lampung, mudah dijangkau dengan berbagai transportasi.
                 </p>
               </div>
 

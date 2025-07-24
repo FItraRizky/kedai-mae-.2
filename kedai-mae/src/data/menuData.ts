@@ -8,7 +8,7 @@ export const menuData: MenuItem[] = [
     price: 15000,
     description: 'Nasi gudeg khas Yogyakarta dengan ayam, telur, dan sambal krecek yang autentik',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&h=400&fit=crop&crop=center',
     emoji: '🍛'
   },
   {
@@ -17,7 +17,7 @@ export const menuData: MenuItem[] = [
     price: 12000,
     description: 'Soto ayam hangat dengan bumbu rempah pilihan, dilengkapi kerupuk dan sambal',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&h=400&fit=crop&crop=center',
     emoji: '🍲'
   },
   {
@@ -26,7 +26,7 @@ export const menuData: MenuItem[] = [
     price: 10000,
     description: 'Nasi dengan sayuran rebus dan sambal pecel khas Madiun yang pedas gurih',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=400&fit=crop&crop=center',
     emoji: '🍚'
   },
   {
@@ -35,7 +35,7 @@ export const menuData: MenuItem[] = [
     price: 18000,
     description: 'Rawon daging sapi dengan kuah hitam khas Surabaya, disajikan dengan nasi putih',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=400&fit=crop&crop=center',
     emoji: '🍜'
   },
   {
@@ -44,7 +44,7 @@ export const menuData: MenuItem[] = [
     price: 14000,
     description: 'Nasi liwet gurih dengan lauk ayam suwir, telur, dan sayuran',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=400&fit=crop&crop=center',
     emoji: '🍛'
   },
   {
@@ -53,7 +53,7 @@ export const menuData: MenuItem[] = [
     price: 12000,
     description: 'Sayuran segar dengan bumbu kacang yang lezat, dilengkapi kerupuk dan lontong',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=400&fit=crop&crop=center',
     emoji: '🥗'
   },
   {
@@ -62,7 +62,7 @@ export const menuData: MenuItem[] = [
     price: 16000,
     description: 'Ayam goreng yang dipenyet dengan sambal terasi pedas dan lalapan segar',
     category: 'makanan-berat',
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&h=400&fit=crop&crop=center',
     emoji: '🍗'
   },
   {
@@ -82,7 +82,7 @@ export const menuData: MenuItem[] = [
     price: 5000,
     description: 'Pisang goreng crispy dengan taburan gula halus dan keju parut',
     category: 'makanan-ringan',
-    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=400&fit=crop&crop=center',
     emoji: '🍌'
   },
   {
@@ -91,7 +91,7 @@ export const menuData: MenuItem[] = [
     price: 4000,
     description: 'Tahu goreng isi sayuran dengan saus kacang dan kerupuk',
     category: 'makanan-ringan',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&h=400&fit=crop&crop=center',
     emoji: '🧈'
   },
   {
@@ -183,7 +183,7 @@ export const menuData: MenuItem[] = [
     price: 6000,
     description: 'Minuman hangat jahe dengan gula merah dan serai',
     category: 'minuman',
-    image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500&h=400&fit=crop&crop=center',
     emoji: '🫖'
   },
   {
@@ -192,7 +192,7 @@ export const menuData: MenuItem[] = [
     price: 8000,
     description: 'Es cendol dengan santan, gula merah, dan es serut',
     category: 'minuman',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=400&fit=crop&crop=center',
     emoji: '🍧'
   },
   {
@@ -201,7 +201,7 @@ export const menuData: MenuItem[] = [
     price: 10000,
     description: 'Jus alpukat segar dengan susu kental manis dan es batu',
     category: 'minuman',
-    image: 'https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&h=400&fit=crop&crop=center',
     emoji: '🥑'
   },
   {
@@ -210,7 +210,7 @@ export const menuData: MenuItem[] = [
     price: 7000,
     description: 'Air kelapa muda segar langsung dari buahnya',
     category: 'minuman',
-    image: 'https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?w=500&h=400&fit=crop&crop=center',
     emoji: '🥥'
   },
   {
@@ -219,7 +219,7 @@ export const menuData: MenuItem[] = [
     price: 6000,
     description: 'Minuman hangat bandrek dengan jahe, gula merah, dan santan',
     category: 'minuman',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&h=400&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&h=400&fit=crop&crop=center',
     emoji: '🍵'
   }
 ];

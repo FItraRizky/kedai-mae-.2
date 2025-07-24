@@ -1,12 +1,11 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Clock, Award, Users, ChefHat, Leaf, Heart, Coffee } from 'lucide-react';
+import { ArrowRight, Star, Clock, Award, Users, ChefHat, Leaf, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { menuData } from '../data/menuData';
 import Footer from '../components/Footer';
 
-const Home: React.FC = () => {
+const Home = () => {
   const { addItem, formatPrice } = useCart();
 
   const featuredMenus = menuData.slice(0, 3);
@@ -73,7 +72,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -91,7 +90,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-amber-900"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-amber-900"
               >
                 Cita Rasa
                 <br />
@@ -104,7 +103,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg text-gray-700 mb-8 leading-relaxed max-w-lg"
+                className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed max-w-lg"
               >
                 Di Kedai Mae, kami hanya menggunakan bahan-bahan alami dan segar, 
                 menghindari pengawet buatan dan bahan kimia. Kami sangat selektif 
@@ -115,18 +114,18 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
                 <Link
                   to="/menu"
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2"
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
                   Lihat Menu
                   <ArrowRight size={20} />
                 </Link>
                 <Link
                   to="/about"
-                  className="border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-center"
+                  className="border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 text-center text-sm sm:text-base"
                 >
                   Tentang Kami
                 </Link>
@@ -146,14 +145,14 @@ const Home: React.FC = () => {
                     <motion.img
                       src={featuredMenus[0].image}
                       alt={featuredMenus[0].name}
-                      className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                      className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-2xl shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
                     <div className="mt-6 text-center">
-                      <h3 className="text-2xl font-bold text-amber-900 mb-2">{featuredMenus[0].name}</h3>
-                      <p className="text-gray-600 mb-4">{featuredMenus[0].description}</p>
-                      <div className="text-3xl font-bold text-amber-700">{formatPrice(featuredMenus[0].price)}</div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-amber-900 mb-2">{featuredMenus[0].name}</h3>
+                      <p className="text-sm sm:text-base text-gray-600 mb-4">{featuredMenus[0].description}</p>
+                      <div className="text-2xl sm:text-3xl font-bold text-amber-700">{formatPrice(featuredMenus[0].price)}</div>
                     </div>
                   </>
                 )}
@@ -170,7 +169,7 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -237,13 +236,13 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-amber-900 mb-4">Menu Pilihan Terbaik</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-900 mb-4">Menu Pilihan Terbaik</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               Nikmati berbagai hidangan lezat yang disiapkan dengan bahan-bahan segar dan bumbu pilihan
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredMenus.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -254,7 +253,7 @@ const Home: React.FC = () => {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Menu image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -267,17 +266,17 @@ const Home: React.FC = () => {
                 
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold text-amber-900">
+                    <h3 className="text-lg sm:text-xl font-bold text-amber-900">
                       {item.name}
                     </h3>
-                    <span className="text-lg font-bold text-amber-700">
+                    <span className="text-base sm:text-lg font-bold text-amber-700">
                       {formatPrice(item.price)}
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-6 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed">{item.description}</p>
                   <button
                     onClick={() => addItem(item)}
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-300"
+                    className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg font-semibold transition-colors duration-300 text-sm sm:text-base"
                   >
                     Tambah ke Keranjang
                   </button>

@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import { createContext, useContext, useReducer } from 'react';
+import type { ReactNode } from 'react';
 
 interface MenuItem {
   id: number;
@@ -131,7 +132,7 @@ const initialState: CartState = {
   total: 0
 };
 
-export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const addItem = (item: MenuItem) => {

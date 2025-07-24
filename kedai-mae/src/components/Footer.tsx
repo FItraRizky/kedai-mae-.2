@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Heart, Instagram, Facebook, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
@@ -47,8 +46,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-br from-primary-brown to-brown-900 text-primary-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -56,22 +55,22 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-primary-white rounded-xl flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary-brown">🍽️</span>
+            <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-white rounded-lg sm:rounded-xl flex items-center justify-center">
+                <span className="text-xl sm:text-2xl font-bold text-primary-brown">🍽️</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-primary-white">Kedai Mae</h3>
-                <p className="text-brown-200 text-sm">Cita Rasa Autentik</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-primary-white">Kedai Mae</h3>
+                <p className="text-brown-200 text-xs sm:text-sm">Cita Rasa Autentik</p>
               </div>
             </div>
-            <p className="text-brown-200 leading-relaxed mb-6">
+            <p className="text-brown-200 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
               Kedai Mae menghadirkan cita rasa autentik Indonesia dengan sentuhan modern. 
               Nikmati pengalaman kuliner yang tak terlupakan bersama keluarga dan teman.
             </p>
             
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               {footerLinks.social.map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -82,9 +81,9 @@ const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-primary-white/10 hover:bg-primary-white/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-white/10 hover:bg-primary-white/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
                   >
-                    <Icon size={20} className="text-brown-200 group-hover:text-primary-white transition-colors duration-300" />
+                    <Icon size={16} className="sm:w-5 sm:h-5 text-brown-200 group-hover:text-primary-white transition-colors duration-300" />
                   </motion.a>
                 );
               })}
@@ -98,13 +97,13 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h4 className="text-lg font-bold text-primary-white mb-6">Menu Utama</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base sm:text-lg font-bold text-primary-white mb-4 sm:mb-6">Menu Utama</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.menu.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.path}
-                    className="text-brown-200 hover:text-primary-white transition-colors duration-300 flex items-center group"
+                    className="text-brown-200 hover:text-primary-white transition-colors duration-300 flex items-center group text-sm sm:text-base"
                   >
                     <span className="w-2 h-2 bg-brown-400 rounded-full mr-3 group-hover:bg-primary-white transition-colors duration-300"></span>
                     {link.name}
@@ -121,13 +120,13 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="text-lg font-bold text-primary-white mb-6">Kategori Menu</h4>
+            <h4 className="text-base sm:text-lg font-bold text-primary-white mb-4 sm:mb-6">Kategori Menu</h4>
             <ul className="space-y-3">
               {footerLinks.categories.map((category, index) => (
                 <li key={index}>
                   <Link
                     to={category.path}
-                    className="text-brown-200 hover:text-primary-white transition-colors duration-300 flex items-center group"
+                    className="text-brown-200 hover:text-primary-white transition-colors duration-300 flex items-center group text-sm sm:text-base"
                   >
                     <span className="w-2 h-2 bg-brown-400 rounded-full mr-3 group-hover:bg-primary-white transition-colors duration-300"></span>
                     {category.name}
@@ -144,14 +143,14 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h4 className="text-lg font-bold text-primary-white mb-6">Kontak Kami</h4>
-            <ul className="space-y-4">
+            <h4 className="text-base sm:text-lg font-bold text-primary-white mb-4 sm:mb-6">Kontak Kami</h4>
+            <ul className="space-y-3 sm:space-y-4">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
                   <li key={index} className="flex items-start space-x-3">
-                    <Icon size={18} className="text-brown-300 mt-1 flex-shrink-0" />
-                    <span className="text-brown-200 text-sm leading-relaxed">{info.text}</span>
+                    <Icon size={16} className="sm:w-[18px] sm:h-[18px] text-brown-300 mt-1 flex-shrink-0" />
+                    <span className="text-brown-200 text-xs sm:text-sm leading-relaxed">{info.text}</span>
                   </li>
                 );
               })}

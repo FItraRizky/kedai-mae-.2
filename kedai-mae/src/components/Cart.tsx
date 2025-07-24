@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Plus, Minus, Trash2, ShoppingBag, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
-const Cart: React.FC = () => {
+const Cart = () => {
   const {
     state,
     removeItem,
