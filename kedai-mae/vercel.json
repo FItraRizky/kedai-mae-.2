@@ -1,5 +1,5 @@
 {
-  "buildCommand": "bash ./vercel.sh",
+  "buildCommand": "node vercel-build-direct.cjs",
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "rewrites": [
