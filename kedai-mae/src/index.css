@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* Import Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #fdf8f6;
+    color: #43302b;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-brown-700 to-brown-800 hover:from-brown-800 hover:to-brown-900 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-brown-50 text-brown-700 border-2 border-brown-300 hover:border-brown-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-xl border border-brown-100 p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+  
+  .card-menu {
+    @apply bg-white rounded-2xl shadow-lg border border-brown-100 p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-brown-900 mb-6 tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-brown-600 leading-relaxed;
+  }
+  
+  .nav-link {
+    @apply text-brown-700 hover:text-brown-900 font-medium transition-colors duration-200 relative;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-brown-700 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-brown-50 via-brown-100 to-brown-200;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-brown-800 to-brown-900 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/80 border border-white/20;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

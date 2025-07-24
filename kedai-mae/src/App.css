@@ -1,0 +1,22 @@
+/* Reset default styling */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #43302b;
+  background-color: #ffffff;
+}
+
+/* Custom styles for Simply Chocolate inspired design */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
